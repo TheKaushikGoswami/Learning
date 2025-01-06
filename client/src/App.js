@@ -8,6 +8,8 @@ function App() {
     <div className="App">
       <Router>
         <Link to="/createpost" className='link'>Create a Post</Link>
+        <br></br>
+        <Link to="/" className='link'>Home</Link>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/createpost" element={<CreatePost />} />

@@ -3,6 +3,22 @@
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
+header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(229, 127, 255);
+}
+
+.link{
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .posts{
   display: flex;
   flex-direction: column;
@@ -19,14 +35,16 @@
 }
 
 .post:hover{
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);}
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 
 .title{
   font-size: 20px;
   padding: 20px;
   margin-bottom: 10px;
   font-weight: bold;
-  background-color: aquamarine;
+  background-color: rgb(229, 127, 255);
 }
 
 .content{
@@ -42,7 +60,7 @@
   padding: 15px;
   font-weight: bold;
   text-align: right;
-  background-color: aquamarine;
+  background-color: rgb(229, 127, 255);
 }
 
 .createPost{
@@ -69,7 +87,7 @@
   margin: 10px;
   padding: 10px;
   width: 80%;
-  background-color: aquamarine;
+  background-color: rgb(229, 127, 255);
   border: none;
   border-radius: 10px;
   font-weight: bold;
@@ -102,4 +120,20 @@
   margin: 10px;
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.postPage{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.comments{
+  width: 40%;
+  height: 10%;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
 }

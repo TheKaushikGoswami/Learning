@@ -126,14 +126,60 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 100vh;
+  padding: 20px;
+}
+
+.postitem{
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 0 0 10px 10px;
 }
 
 .comments{
+  padding-top: 20px;
   width: 40%;
-  height: 10%;
   display: flex ;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.addComment{
+  padding-right: 10px;
+}
+
+.addComment button{
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+  background-color: rgb(229, 127, 255);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.addComment button:hover{
+  background-color: lightblue;
+}
+
+.addComment input{
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+}
+
+.commentList{
+  text-align: left;
+  width: 95%;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.comment{
+  background-color: rgb(229, 127, 255);
+  margin: 10px 0 10px 0;
+  border-radius: 5px;
   border: 1px solid black;
+  padding: 10px;
 }

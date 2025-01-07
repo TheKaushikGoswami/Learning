@@ -21,8 +21,20 @@ function CreatePost() {
     })
 
     const onSubmit = (data) => {
-        axios.post('http://localhost:3001/posts', data).then(() => {
-            navigate('/');
+        axios.post('http://localhost:3001/posts', data,
+            {
+                headers: {
+                    accessToken: sessionStorage.getItem('accessToken')
+                }
+            }
+        ).then((res) => {
+            if(res.data.error) {
+                alert(res.data.error)
+            }
+            else{
+                alert('Post created');
+                navigate('/');
+            }
         })
     }
 

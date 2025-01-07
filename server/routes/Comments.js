@@ -14,6 +14,13 @@ router.get('/:postId', async (req, res) =>{
 router.post('/', validateToken, async (req, res) =>{
     
     const comment = req.body;
+
+    if(comment.comment === ''){
+        return res.json({error: 'Comment cannot be empty!'});
+    }
+
+    const username = req.user.username;
+    comment.username = username;
     await Comments.create(comment);
 
     res.json(comment);

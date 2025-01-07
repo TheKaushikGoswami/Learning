@@ -60,10 +60,11 @@ function Post() {
                     </div>
                     <div className='commentList'>
                         {
-                            comments.map((comment, key) => {
+                            comments.map((comment) => {
                                 return (
-                                    <div key={key} className='comment'>
+                                    <div className='comment'>
                                         <div className='comment-content'>{comment.comment}</div>
+                                        <div className='comment-author'>- {comment.username}</div>
                                     </div>
                                 )
                             })

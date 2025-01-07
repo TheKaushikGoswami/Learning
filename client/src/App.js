@@ -15,9 +15,14 @@ function App() {
         <br></br>
         <Link to="/createpost" className='link'>Create a Post</Link>
         <br></br>
-        <Link to="/register" className='link'>Register</Link>
-        <br></br>
-        <Link to="/login" className='link'>Login</Link>
+        {!sessionStorage.getItem('accessToken') && (
+          <>
+          <Link to="/register" className='link'>Register</Link>
+          <br></br>
+          <Link to="/login" className='link'>Login</Link>
+          </>
+        )}
+    
         </header>
         <Routes>
           <Route path="/" element={<Home />} />

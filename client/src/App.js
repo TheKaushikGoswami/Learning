@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Post from './pages/Post';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/createpost" element={<CreatePost />} />
           <Route path="/posts/:id" element={<Post />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>

@@ -222,3 +222,28 @@ header{
 .register button:hover{
   background-color: lightblue;
 }
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login input{
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+}
+
+.login button{
+  margin: 10px;
+  padding: 10px;
+  width: 30%;
+  background-color: rgb(229, 127, 255);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}

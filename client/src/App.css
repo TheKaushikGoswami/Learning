@@ -26,6 +26,14 @@ header{
   align-items: center;
 }
 
+.header-right button{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .link{
   margin: 10px;
   padding: 10px;

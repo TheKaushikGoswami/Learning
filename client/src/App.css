@@ -1,13 +1,29 @@
 .App {
   text-align: center;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
 
 header{
   display: flex;
-  align-items: center;
-  width: 100%;
+  justify-content: space-between;
   background-color: rgb(229, 127, 255);
+}
+
+.header-left{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link{

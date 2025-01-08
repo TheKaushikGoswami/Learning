@@ -36,7 +36,7 @@ function Post() {
                 alert(res.data.error);
             }
             else{
-                const newComment = { comment: comment };
+                const newComment = { comment: comment, username: res.data.username };
                 setComments([...comments, newComment]);
                 setComment('');
             }

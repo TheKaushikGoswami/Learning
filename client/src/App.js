@@ -11,7 +11,12 @@ import axios from 'axios';
 
 function App() {
 
-  const [authState, setAuthState] = useState(false);
+  const [authState, setAuthState] = useState({ username: '', id: 0, status: false });
+
+  const logout = () => {
+    localStorage.removeItem('accessToken');
+    setAuthState({...authState, status: false});
+  }
 
   useEffect(() => {
     axios.get('http://localhost:3001/auth',
@@ -21,31 +26,47 @@ function App() {
         }
       }
     ).then((response) => {
-      if(response.data.error){
-        setAuthState(false);
-      }else{
-        setAuthState(true);
+      if (response.data.error) {
+        setAuthState({...authState, status: false});
+      } else {
+        setAuthState({
+          username: response.data.username,
+          id: response.data.id,
+          status: true
+        });
       }
     });
   }, []);
 
   return (
     <div className="App">
-      <AuthContext.Provider value={{authState, setAuthState}}>
+      <AuthContext.Provider value={{ authState, setAuthState }}>
 
         <Router>
           <header>
-            <Link to="/" className='link'>Home</Link>
-            <br></br>
-            <Link to="/createpost" className='link'>Create a Post</Link>
-            <br></br>
-            {!authState && (
-              <>
-                <Link to="/register" className='link'>Register</Link>
-                <br></br>
-                <Link to="/login" className='link'>Login</Link>
-              </>
-            )}
+            <div className='header-left'>
+
+              <Link to="/" className='link'>Home</Link>
+              <br></br>
+              <Link to="/createpost" className='link'>Create a Post</Link>
+              <br></br>
+            </div>
+            <div className='header-right'>
+              {!authState.status ? (
+                <>
+                  <Link to="/register" className='link'>Register</Link>
+                  <br></br>
+                  <Link to="/login" className='link'>Login</Link>
+                </>
+              ) : (
+                <>
+                <h3>Welcome, {authState.username}</h3>
+                <button className='logout' onClick={logout}>
+                  Logout
+                </button>
+                </>
+              )}
+            </div>
           </header>
           <Routes>
             <Route path="/" element={<Home />} />

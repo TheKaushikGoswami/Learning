@@ -3,24 +3,27 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../helpers/AuthContext'
 
 function CreatePost() {
+
+    const { authState } = React.useContext(AuthContext);
 
     const navigate = useNavigate();
 
     const initialValues = {
         title: '',
         content: '',
-        username: ''
     }
 
     const validationSchema = Yup.object({
         title: Yup.string().required(),
         content: Yup.string().required(),
-        username: Yup.string().min(3).max(15).required()
     })
-
+    
     const onSubmit = (data) => {
+
+        data.username = authState.username;
         axios.post('http://localhost:3001/posts', data,
             {
                 headers: {
@@ -50,9 +53,6 @@ function CreatePost() {
                     <label className='form-label'>Content: </label>
                     <ErrorMessage name='content' component='span' className='error-span' />
                     <Field as='textarea' name='content' placeholder='Ex: Content...' />
-                    <label className='form-label'>Username: </label>
-                    <ErrorMessage name='username' component='span' className='error-span' />
-                    <Field type='text' name='username' placeholder='Ex: username...' />
 
                     <button type='submit'>Create Post</button>
                 </Form>

@@ -1,4 +1,4 @@
-// Write a C++ Program to apply multiplication of matrices of two matrices considering the consitions required for multiplication of 2 matrices in terms of matrix size.
+// Write a C++ Program to apply multiplication of matrices of two matrices considering the conditions required for multiplication of 2 matrices in terms of matrix size.
 
 #include <iostream>
 using namespace std;

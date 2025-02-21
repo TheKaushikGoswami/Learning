@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        *{
+            scrollbar-width: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="text-center text-5xl font-bold my-3">
+        Our Bread
+    </div>
+    <div class="text-center text-lg font-bold">A values-driven bakery</div>
+
+    <div class="overflow-x-auto whitespace-nowrap flex gap-2 mt-10" id="carousel">
+        <img src="Assessment 1/images/image.jpg" alt="" class="w-1/4 h-96 object-cover" />
+        <img src="Assessment 1/images/image.jpg" alt="" class="w-1/4 h-96 object-cover" />
+        <img src="Assessment 1/images/image.jpg" alt="" class="w-1/4 h-96 object-cover" />
+        <img src="Assessment 1/images/image.jpg" alt="" class="w-1/4 h-96 object-cover" />
+        <img src="Assessment 1/images/image.jpg" alt="" class="w-1/4 h-96 object-cover" />
+        <img src="Assessment 1/images/image.jpg" alt="" class="w-1/4 h-96 object-cover" />
+    </div>
+
+    <script>
+        const carousel = document.getElementById('carousel');
+
+function autoScroll() {
+    if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+        carousel.scrollLeft = 0;
+    } else {
+        carousel.scrollLeft += 2;
+    }
+}
+
+setInterval(autoScroll, 20);
+    </script>
+    
+    <div class="grid grid-cols-2 gap-5 container px-10 mx-auto mt-20">
+        <div class="p-5">
+            <div class="text-5xl font-bold mb-5">Our Mission</div>
+            <div class="font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis in provident, quam inventore veniam possimus illum quia nisi at! Dolorum, natus aliquid? Odio eligendi a nisi aspernatur asperiores non enim aut, consequatur quaerat temporibus tenetur, repellendus cum veniam ipsum! Repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit porro numquam architecto harum est aspernatur perspiciatis provident, enim laudantium quasi placeat. At natus in nisi commodi nihil reiciendis hic!</div>
+            <div class="grid grid-cols-1 mt-4">
+                <div class=" mt-10 col flex justify-between">
+                    <div class="item-1 w-1/2">
+                        <h3 class="text-2xl font-bold">Our People</h3>
+                        <p>
+                            <hr class="mt-4 border-[1.5px] border-gray-400 w-[90%]">
+                        </p>
+                    </div>
+                    <div class="item-2 w-1/2">
+                        <h3 class="text-2xl font-bold">Our Values</h3>
+                        <p>
+                            <hr class="mt-4 border-[1.5px] border-gray-400 w-[90%]">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-10 col flex justify-between">
+                    <div class="item-1 w-1/2">
+                        <h3 class="text-2xl font-bold">Our History</h3>
+                        <p>
+                            <hr class="mt-4 border-[1.5px] border-gray-400 w-[90%]">
+                        </p>
+                    </div>
+                    <div class="item-2 w-1/2">
+                        <h3 class="text-2xl font-bold">Our Culture</h3>
+                        <p>
+                            <hr class="mt-4 border-[1.5px] border-gray-400 w-[90%]">
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-10 col flex justify-between">
+                    <div class="item-1 w-1/2">
+                        <h3 class="text-2xl font-bold">Our History</h3>
+                        <p>
+                            <hr class="mt-4 border-[1.5px] border-gray-400 w-[90%]">
+                        </p>
+                    </div>
+                    <div class="item-2 w-1/2">
+                        <h3 class="text-2xl font-bold">Our Culture</h3>
+                        <p>
+                            <hr class="mt-4 border-[1.5px] border-gray-400 w-[90%]">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center items-center">
+            <img src="Assessment 1/images/bakery_man.webp" alt="" class="rounded-full aspect-square w-[70%] object-cover" />
+        </div>
+    </div>
+
+
+  </body>
+</html>

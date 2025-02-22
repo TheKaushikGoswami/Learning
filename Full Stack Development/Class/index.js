@@ -26,8 +26,9 @@ let app = express();
 let mongoose = require('mongoose');
 let Student = require('./schema/Student');
 app.use(express.json());
+let dotenv = require('dotenv').config();
 
-mongoose.connect('mongodb+srv://admin:kaushik@internship.v4fbnzf.mongodb.net/?retryWrites=true&w=majority&appName=internship').then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
     console.log('Error: ', err);

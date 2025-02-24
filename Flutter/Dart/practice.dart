@@ -17,7 +17,7 @@ void main() {
   int i;
   // print(i);          Error: Non-nullable variable 'i' must be assigned before it can be used.
 
-  int? a; // Null-able variable : Can have null valueb
+  int? a; // Null-able variable : Can have null value
   print(a);
 
   int b;
@@ -65,6 +65,42 @@ void main() {
   h.myFunc("Wowww");
 
   print(h.Add(1, 2));
+
+  // List
+
+  var list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  list.add(500); // Add an element to the list
+
+  print(list);
+
+  list.replaceRange(0, 3, [0, 1, 2, 3]); // Replace a specific range of elements
+
+  list.removeLast(); // Removes the last element
+
+  list.remove(40); // Removes an element with a specific value
+
+  list.removeAt(2); // Removes an element at a specific index
+
+  list.removeRange(0, 2);
+
+  var names = [];
+  names.add("Kaushik");
+  names.add("Wowww");
+  names.addAll(list); // Add all elements from another list
+
+  names.insert(2, 300); // Insert element at a specific index
+  names.insertAll(1, list); // Insert a list at a particular index
+
+  names[2] = "haha"; // Update the value of an index
+
+  print(names);
+  print("Length: ${names.length}");
+  print("Reverse: ${names.reversed}");
+  print("First: ${names.first}");
+  print("Last: ${names.last}");
+  print("Is Empty: ${names.isEmpty}");
+  print("Is not Empty: ${names.isNotEmpty}");
+  print(names.elementAt(4));
 }
 
 class Human {
@@ -84,5 +120,4 @@ class Human {
   int Add(int a, int b) {
     return a + b;
   }
-
 }

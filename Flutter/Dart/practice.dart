@@ -42,9 +42,47 @@ void main() {
   // Boolean
   bool isLogin = false;
   isLogin = true;
+
+  // var
+  var subject = "Maths";
+
+  var test; // when not initialised, the data type is dynamic
+
+  test = "D"; // can accept string
+  test = 14; // as well as integer
+  test = 9.889; // and decimal values
+
+  // dynamic
+  dynamic x;
+
+  x = "String";
+  x = 9;
+  x = false;
+
+  var h = Human(); // Object creation
+  h.myFunc("Kaushik"); // Function Calling
+
+  h.myFunc("Wowww");
+
+  print(h.Add(1, 2));
 }
 
-
 class Human {
-  Human();
+  // Constructors
+
+  // Default Construtor
+  Human() {
+    print("New Object Created!");
+  }
+
+  // Functions
+  void myFunc(String name) {
+    // Function declaration
+    print("Hello, World! $name"); // Function definition
+  }
+
+  int Add(int a, int b) {
+    return a + b;
+  }
+
 }

@@ -48,7 +48,23 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.purpleAccent,
           child: Center(
             child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text('R1', style: TextStyle(fontSize: 25),),
+                        Text('R2', style: TextStyle(fontSize: 25),),
+                        Text('R3', style: TextStyle(fontSize: 25),),
+                        Text('R4', style: TextStyle(fontSize: 25),),
+                        Text('R5', style: TextStyle(fontSize: 25),),
+                        ElevatedButton(onPressed: (){
+                          print("WOwwwwwwwwww");
+                        }, 
+                        child: Text("Click Me!!!!!!"))
+                      ],
+                    ),
                     Text("Hello!", style: TextStyle(
                       color: Colors.amber,
                       fontSize: 40,
@@ -75,6 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       print("Outline Button");
                   },
                   child: Text("Outline Button")
+                  ),
+                  SizedBox(
+                      height: 200,
+                      width: 200,
+                      child: Image.asset('assets/images/sanyojm_logo.jpeg'),
                   )
                 ]
             ),

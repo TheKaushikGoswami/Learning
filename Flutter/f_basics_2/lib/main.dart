@@ -58,36 +58,115 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Hello World")),
+      appBar: AppBar(
+        backgroundColor: Colors.purpleAccent,
+        title: Text("Hello World"),
+      ),
       body: Center(
-        child: InkWell(
-          // Used to make any widget tap-able
-          onTap: () {
-            print("Single Tap");
-          },
-          onDoubleTap: () {
-            print("Double Tap");
-          },
-          onLongPress: () {
-            print("Long Press");
-          },
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.amber,
-            child: Center(
-              child: InkWell(
-                onTap: () {
-                  print("Text clicked!!");
-                },
-                onDoubleTap: () {
-                  print("Double Tapped on Text!!");
-                },
-                child: Text(
-                  "Click Me!!!",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 200,
+                          width: 200,
+                          color: Colors.blueAccent,
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          height: 200,
+                          width: 200,
+                          color: Colors.green,
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          height: 200,
+                          width: 200,
+                          color: Colors.brown,
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          height: 200,
+                          width: 200,
+                          color: Colors.tealAccent,
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          height: 200,
+                          width: 200,
+                          color: Colors.blueAccent,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  height: 200,
+                  margin: EdgeInsets.only(bottom: 10),
+                  color: Colors.redAccent,
+                ),
+                Container(
+                  height: 200,
+                  margin: EdgeInsets.only(bottom: 10),
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  height: 200,
+                  margin: EdgeInsets.only(bottom: 10),
+                  color: Colors.blueAccent,
+                ),
+                Container(
+                  height: 200,
+                  margin: EdgeInsets.only(bottom: 10),
+                  color: Colors.redAccent,
+                ),
+                Container(
+                  height: 200,
+                  margin: EdgeInsets.only(bottom: 10),
+                  color: Colors.greenAccent,
+                ),
+                InkWell(
+                  // Used to make any widget tap-able
+                  onTap: () {
+                    print("Single Tap");
+                  },
+                  onDoubleTap: () {
+                    print("Double Tap");
+                  },
+                  onLongPress: () {
+                    print("Long Press");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    height: 200,
+                    color: Colors.amber,
+                    child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          print("Text clicked!!");
+                        },
+                        onDoubleTap: () {
+                          print("Double Tapped on Text!!");
+                        },
+                        child: Text(
+                          "Click Me!!!",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),

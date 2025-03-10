@@ -61,11 +61,16 @@ while True:
         # Add text if a person is present
         if name in known_face_names:
             font = cv2.FONT_HERSHEY_DUPLEX
-            bottomLeftCornerOfText = (10, 50)
             fontScale = 1
-            fontColor = (0, 0, 0)
+            if name == "Kaushik":
+                fontColor = (255, 0, 0)  # Red for Kaushik
+            elif name == "Sahil":
+                fontColor = (0, 255, 0)  # Green for Sahil
+            elif name == "Abhishek":
+                fontColor = (0, 0, 255)  # Blue for Abhishek
             thickness = 3
             lineType = 2
+            bottomLeftCornerOfText = (10, 50 + 30 * known_face_names.index(name))
             cv2.putText(frame, name + " is Present", bottomLeftCornerOfText, font, fontScale, fontColor, thickness, lineType)
 
             if name in students:

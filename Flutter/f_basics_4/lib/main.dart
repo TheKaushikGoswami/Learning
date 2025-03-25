@@ -5,6 +5,8 @@ void main(){
 }
 
 class FlutterApp extends StatelessWidget{
+  const FlutterApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,6 +21,8 @@ class FlutterApp extends StatelessWidget{
 }
 
 class HomeScreen extends StatelessWidget{
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

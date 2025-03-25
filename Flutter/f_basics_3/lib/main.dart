@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var names = [
       "Kaushik",
-      "Ankur",
+      "Ankur", 
       "Yuvraj",
       "Humanshu",
       "Abhishek",
@@ -71,12 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
         itemCount: names.length,
-        separatorBuilder: (context, index){
-          return Divider(
-            color: Colors.black,
-            thickness: 2,
-            height: 80,
-          );
+        separatorBuilder: (context, index) {
+          return Divider(color: Colors.black, thickness: 2, height: 80);
         },
 
         // Basic List View

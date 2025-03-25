@@ -28,13 +28,39 @@ class HomeScreen extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blue.shade100,
       ),
       body: Container(
-        // height: 1000,
-        // width: 500,
-        // child: Text("Hello There!"),
-        color: Colors.blue.shade100,
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.blue.shade50,
+        child: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              borderRadius: BorderRadius.circular(20),
+              // borderRadius: BorderRadius.only(
+              //   topLeft: Radius.circular(30),
+              //   bottomRight: Radius.circular(30),
+              // )
+
+              border: Border.all(
+                width: 5,
+                color: Colors.black,
+              ),
+              boxShadow: [
+                BoxShadow(
+                blurRadius: 55,
+                color: Colors.red,
+                spreadRadius: 15
+                )
+              ],
+              // shape: BoxShape.circle
+            )
+          )
+        )
       )
     );
   }

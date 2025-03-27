@@ -33,7 +33,6 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
         const Data = mongoose.model('Data', dataSchema);
     
         // Insert data into the model
-    
         for (let i = 1; i < rows.length; i++) {
             const row = rows[i].split(';');
             const data = new Data({});

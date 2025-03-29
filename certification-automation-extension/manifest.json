@@ -1,24 +1,37 @@
 {
-    "manifest_version": 3,
-    "name": "Automated Certification Completion",
-    "version": "1.0",
-    "description": "Automates the certification process on atl-entrepreneurship.digitalreadiness.org/ai-for-entrepreneurship.",
-    "permissions": [
-      "activeTab",
-      "scripting"
-    ],
-    "host_permissions": [
-      "*://atl-entrepreneurship.digitalreadiness.org/*"
-    ],
-    "action": {
-      "default_popup": "popup.html",
-      "default_title": "Certification Automation"
-    },
-    "content_scripts": [
-      {
-        "matches": ["*://atl-entrepreneurship.digitalreadiness.org/ai-for-entrepreneurship*"],
-        "js": ["content.js"]
-      }
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "Automated Certification Completion",
+  "version": "1.0",
+  "description": "Automates the certification process on atl-entrepreneurship.digitalreadiness.org/ai-for-entrepreneurship.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://atl-entrepreneurship.digitalreadiness.org/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Certification Automation",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://atl-entrepreneurship.digitalreadiness.org/ai-for-entrepreneurship*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}

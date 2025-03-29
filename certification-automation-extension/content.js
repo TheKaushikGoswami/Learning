@@ -7,7 +7,6 @@ function processAutomation() {
   const downloadBtn = Array.from(document.querySelectorAll('button'))
     .find(btn => btn.textContent.trim().toLowerCase().includes("download certificate"));
   if (downloadBtn) {
-    console.log("Download Certificate button found. Stopping automation.");
     automationActive = false;
     observer.disconnect();
     return;
@@ -19,10 +18,8 @@ function processAutomation() {
   if (continueBtn) {
     if (continueBtn.disabled) {
       continueBtn.disabled = false;
-      console.log("Force-enabled a disabled Continue button.");
     }
     continueBtn.scrollIntoView({ behavior: "smooth", block: "center" });
-    console.log("Clicking Continue button.");
     continueBtn.click();
     requestAnimationFrame(processAutomation);
     return;
@@ -35,7 +32,6 @@ function processAutomation() {
   if (arrows.length > 0) {
     let arrow = arrows[0];
     arrow.scrollIntoView({ behavior: "smooth", block: "center" });
-    console.log("Clicking an arrow container.");
     arrow.click();
     requestAnimationFrame(processAutomation);
     return;
@@ -47,10 +43,8 @@ function processAutomation() {
   if (checkBtn) {
     if (checkBtn.disabled) {
       checkBtn.disabled = false;
-      console.log("Force-enabled a disabled Check button.");
     }
     checkBtn.scrollIntoView({ behavior: "smooth", block: "center" });
-    console.log("Clicking Check button.");
     checkBtn.click();
     
     // Immediately check for a "Show Answer" button.
@@ -59,17 +53,14 @@ function processAutomation() {
     if (showAnswerBtn) {
       if (showAnswerBtn.disabled) {
         showAnswerBtn.disabled = false;
-        console.log("Force-enabled a disabled Show Answer button.");
       }
       showAnswerBtn.scrollIntoView({ behavior: "smooth", block: "center" });
-      console.log("Clicking Show Answer button.");
       showAnswerBtn.click();
     }
     requestAnimationFrame(processAutomation);
     return;
   }
   
-  console.log("No target elements found. Retrying...");
   requestAnimationFrame(processAutomation);
 }
 
@@ -87,13 +78,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.command === "start") {
     if (!automationActive) {
       automationActive = true;
-      console.log("Automation started.");
       initObserver();
       requestAnimationFrame(processAutomation);
     }
   } else if (message.command === "stop") {
     automationActive = false;
     observer.disconnect();
-    console.log("Automation stopped by user.");
   }
 });
